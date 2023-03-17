@@ -1,0 +1,27 @@
+{
+  "name": "nftauction",
+  "version": "1.0.0",
+  "description": "A Simple NFT Auction contract",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/www.github.com/faytey.git"
+  },
+  "author": "Faith M. Roberts",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/www.github.com/faytey/issues"
+  },
+  "homepage": "https://github.com/www.github.com/faytey#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "hardhat": "^2.13.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.8.2",
+    "dotenv": "^16.0.3"
+  }
+}
