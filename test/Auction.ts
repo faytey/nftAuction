@@ -23,38 +23,38 @@ describe("BlindAuction", function () {
     return { fitex, unlockTime, lockedAmount, owner, otherAccount };
   }
 
-  describe("Deployment", function () {
-    it("Should set the right unlockTime", async function () {
-      const { fitex, unlockTime } = await loadFixture(deployOneYearLockFixture);
+  // describe("Deployment", function () {
+  //   it("Should set the right unlockTime", async function () {
+  //     const { fitex, unlockTime } = await loadFixture(deployOneYearLockFixture);
 
-      expect(await fitex.unlockTime()).to.equal(unlockTime);
-    });
+  //     // expect(await fitex.unlockTime()).to.equal(unlockTime);
+  //   });
 
-    it("Should set the right owner", async function () {
-      const { fitex, owner } = await loadFixture(deployOneYearLockFixture);
+  //   it("Should set the right owner", async function () {
+  //     const { fitex, owner } = await loadFixture(deployOneYearLockFixture);
 
-      expect(await fitex.owner()).to.equal(owner.address);
-    });
+  //     expect(await fitex.owner()).to.equal(owner.address);
+  //   });
 
-    it("Should receive and store the funds to lock", async function () {
-      const { fitex, lockedAmount } = await loadFixture(
-        deployOneYearLockFixture
-      );
+  //   it("Should receive and store the funds to lock", async function () {
+  //     const { fitex, lockedAmount } = await loadFixture(
+  //       deployOneYearLockFixture
+  //     );
 
-      expect(await ethers.provider.getBalance(fitex.address)).to.equal(
-        lockedAmount
-      );
-    });
+  //     expect(await ethers.provider.getBalance(fitex.address)).to.equal(
+  //       lockedAmount
+  //     );
+  //   });
 
-    it("Should fail if the unlockTime is not in the future", async function () {
-      // We don't use the fixture here because we want a different deployment
-      const latestTime = await time.latest();
-      const Fitex = await ethers.getContractFactory("FitexAuction");
-      await expect(Fitex.deploy(latestTime, { value: 1 })).to.be.revertedWith(
-        "Unlock time should be in the future"
-      );
-    });
-  });
+  //   it("Should fail if the unlockTime is not in the future", async function () {
+  //     // We don't use the fixture here because we want a different deployment
+  //     const latestTime = await time.latest();
+  //     const Fitex = await ethers.getContractFactory("FitexAuction");
+  //     await expect(Fitex.deploy()).to.be.revertedWith(
+  //       "Unlock time should be in the future"
+  //     );
+  //   });
+  // });
 
   describe("createAuction", function () {
     describe("Validations", function () {

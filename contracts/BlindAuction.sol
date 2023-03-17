@@ -1,7 +1,6 @@
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 
 contract FitexAuction{
@@ -45,12 +44,6 @@ function createAuction(uint token_id) public returns(uint _id){
     auction.push(create);
     isOn = true;
 }
-
-// function bidAmount(uint _amount) private {
-//     auctionDetails memory amount;
-//     amount.startBidAmount = _amount;
-//     bids.push(_amount);
-// }
 
 function bidForNft(uint auctionId, uint amount) external payable {
     auctionDetails memory bidding;
